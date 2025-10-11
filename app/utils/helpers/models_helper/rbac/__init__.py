@@ -1,0 +1,3 @@
+from .permission_categories import PermissionCategoryAwaitableAttrs
+from .permissions import PermissionsAwaitableAttrs
+from .roles import RolesAwaitableAttrs

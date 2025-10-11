@@ -1,0 +1,19 @@
+services:
+
+  template_app:
+    build: .
+    container_name: template_app
+    restart: always
+    ports:
+      - "8999:8000"
+    env_file:
+      - .env
+    networks:
+      - template_network
+    volumes:
+      - ./:/app
+
+networks:
+  template_network:
+    external: true
+
