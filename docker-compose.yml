@@ -1,19 +1,20 @@
 services:
 
-  template_app:
+  hospitalization_app:
     build: .
-    container_name: template_app
+    container_name: hosp
     restart: always
     ports:
       - "8999:8000"
     env_file:
       - .env
     networks:
-      - template_network
+      - shared_network
     volumes:
       - ./:/app
 
 networks:
-  template_network:
+  shared_network:
     external: true
 
+ 
