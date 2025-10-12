@@ -14,5 +14,5 @@ async def _get_all(stmt: Select[Tuple[_T]]) -> Sequence[_T]:
     return (await DB.execute(stmt)).unique().scalars().all()
 
 
-async def _execute(stmt: Select[Tuple[_T]]) -> Sequence[_T]:
+async def _execute(stmt: Select[_T]) -> Sequence[_T]:
     return (await DB.execute(stmt)).all()

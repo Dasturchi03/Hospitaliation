@@ -19,9 +19,11 @@ class Users(Base):
     password: Mapped[str] = mapped_column(String(255), comment="Пароль")
 
     roles: Mapped[List['Roles']] = relationship(
-        "Roles",
         backref='users',
         secondary=user_role
+    )
+    doctors: Mapped[List["Doctor"]] = relationship(
+        back_populates='user'
     )
 
     def __str__(self):

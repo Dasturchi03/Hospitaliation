@@ -20,7 +20,8 @@ class Roles(Base):
     permissions: Mapped[List["Permissions"]] = relationship(
         "Permissions",
         back_populates='roles',
-        secondary=role_permissions
+        secondary=role_permissions,
+        lazy='subquery'
     )
 
     @property

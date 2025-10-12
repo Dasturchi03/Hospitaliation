@@ -51,7 +51,7 @@ async def add_role(request: sc.AddRole):
     await DB.refresh(role)
 
     return AddedResponse(
-        sc.RoleOut.model_validate(role).model_dump(),
+        sc.RoleOut.model_validate(role),
         "Role qo'shildi!"
     )
 

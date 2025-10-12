@@ -13,10 +13,10 @@ router = APIRouter(
 
 
 @router.get('/users', response_model=sc.ListUsers)
-async def get_users(_: Auth):
+async def get_users():
     return await sv.get_users()
 
 
 @router.post('/test')
-async def test(request: sc.AddUser, _: Auth):
+async def test(request: sc.AddUser):
     return await sv.test(request=request)

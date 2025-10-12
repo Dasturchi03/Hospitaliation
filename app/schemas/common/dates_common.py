@@ -67,3 +67,4 @@ def for_month_dep(
 
 
 ForMonth = Annotated[MonthRange, Depends(for_month_dep)]
+ForDate = Annotated[date, Query(description="YYYY-MM-DD", default_factory=date.today)]
