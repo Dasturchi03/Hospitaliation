@@ -4,7 +4,7 @@ from app.schemas.doctors import doctors as sc
 from app.utils.deps.auth import auth
 
 
-router = APIRouter(prefix='/doctors', tags=['Doctors | Site Users'])
+router = APIRouter(prefix='/doctors', tags=['Doctors | Site Users'], dependencies=[auth])
 
 
 @router.get('/get-all', response_model=sc.ListDoctors)

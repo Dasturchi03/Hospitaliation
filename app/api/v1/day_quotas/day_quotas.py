@@ -4,7 +4,7 @@ from app.schemas.day_quotas import day_quotas as sc
 from app.utils.deps.auth import auth
 
 
-router = APIRouter(prefix='/day-quota', tags=['Daily quotas API'])
+router = APIRouter(prefix='/day-quota', tags=['Daily quotas API'], dependencies=[auth])
 
 
 @router.get('/get', response_model=sc.ListDayQuotas)

@@ -4,7 +4,7 @@ from app.schemas.departments import departments as sc
 from app.utils.deps.auth import auth
 
 
-router = APIRouter(prefix='/departments', tags=['Departments'])
+router = APIRouter(prefix='/departments', tags=['Departments'], dependencies=[auth])
 
 
 @router.get('/get-all', response_model=sc.DepartmentsListOut)

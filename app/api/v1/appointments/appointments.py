@@ -4,7 +4,7 @@ from app.schemas.appointments import appointments as sc
 from app.utils.deps.auth import Auth, auth
 
 
-router = APIRouter(prefix='/appointments', tags=['Appointments'])
+router = APIRouter(prefix='/appointments', tags=['Appointments'], dependencies=[auth])
 
 
 @router.get('/get/{appointment_id}', response_model=sc.AppointmentOut)
