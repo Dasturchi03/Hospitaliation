@@ -15,6 +15,8 @@ class AppointmentBase(BaseSchema):
     slot_no: int
     doctor_id: int
 
+    status: AppointmentStatusLiteral | None = "planned"
+
     patient_fullname: Optional[str]
     birth_date: Optional[PyDate]
     diagnosis: Optional[str]
