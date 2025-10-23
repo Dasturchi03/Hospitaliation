@@ -29,7 +29,7 @@ class Appointment(Base):
     doctor_id: Mapped[int | None] = mapped_column(ForeignKey("doctors.id", ondelete="SET NULL"), nullable=True)
 
     patient_fullname: Mapped[str] = mapped_column(String(200))
-    birth_date: Mapped[PyDate | None] = mapped_column(Date, nullable=True)
+    birth_date: Mapped[str | None] = mapped_column(String(10), nullable=True)
     age_text: Mapped[str | None] = mapped_column(String(60))
     diagnosis: Mapped[str | None] = mapped_column(String(255))
     phone: Mapped[str | None] = mapped_column(String(50))

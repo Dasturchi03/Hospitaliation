@@ -18,7 +18,7 @@ class AppointmentBase(BaseSchema):
     status: AppointmentStatusLiteral | None = "planned"
 
     patient_fullname: Optional[str]
-    birth_date: Optional[PyDate]
+    birth_date: Optional[str] = None
     diagnosis: Optional[str]
     phone: Optional[str]
     purpose: Optional[str]
