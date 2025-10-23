@@ -17,8 +17,8 @@ async def _get_appointment(appointment_id: int, raise_: bool = True):
     return appointment
 
 
-def _get_appointments(department_id: int = None, date_: date = None):
-    
+def _get_appointments(department_id: int = None, date_: date = None, status: str = None):
+
     stmt = select(
         Appointment
     ).options(
@@ -35,6 +35,11 @@ def _get_appointments(department_id: int = None, date_: date = None):
     if date_:
         stmt = stmt.where(
             Appointment.date == date_
+        )
+
+    if status:
+        stmt = stmt.where(
+            Appointment.status == status
         )
 
     return stmt

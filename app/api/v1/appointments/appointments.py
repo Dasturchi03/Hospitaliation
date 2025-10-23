@@ -13,8 +13,8 @@ async def get_appointment(appointment_id: int):
 
 
 @router.get('/get-list', response_model=sc.ListAppointments)
-async def get_department_appointments(department_id: int, for_date: sc.ForDate):
-    return await sv.get_department_appointments(department_id=department_id, date_=for_date)
+async def get_department_appointments(department_id: int, for_date: sc.ForDate, status: sc.AppointmentStatusLiteral):
+    return await sv.get_department_appointments(department_id=department_id, date_=for_date, status=status)
 
 
 @router.post('/add-appointment', response_model=sc.Result)

@@ -19,11 +19,12 @@ async def get_appointment(appointment_id: int):
     return appointment
 
 
-async def get_department_appointments(department_id: int, date_: date):
+async def get_department_appointments(department_id: int, date_: date, status: sc.AppointmentStatusLiteral):
     await rp_dep._get_department(department_id=department_id)
     stmt = rp._get_appointments(
         department_id=department_id,
-        date_=date_
+        date_=date_,
+        status=status
     )
 
     return await _get_all(stmt)
