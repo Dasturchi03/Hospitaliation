@@ -26,7 +26,7 @@ def _get_appointments(department_id: int = None, date_: date = None, status: str
         subqueryload(Appointment.doctor),
         subqueryload(Appointment.created_by_user)
     )
-    
+
     if department_id:
         stmt = stmt.where(
             Appointment.department_id == department_id

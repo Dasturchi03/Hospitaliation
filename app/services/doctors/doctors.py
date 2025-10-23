@@ -57,6 +57,8 @@ async def update_doctor(doctor_id: int, request: sc.UpdateDoctorRequest):
     dr = await rp._get_doctor_obj(doctor_id=doctor_id)
     user = await dr.awaitable_attrs.user
 
+    if request.username:
+        user.username = request.username
     if request.full_name:
         dr.full_name = request.full_name
     if request.department_id:
